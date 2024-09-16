@@ -1,4 +1,4 @@
-# My Tabs Plugin
+# Skeleton Tabs
 
 Плагин для управления табами на странице с использованием классов `RadioTabs` и `CheckboxTabs`. Этот плагин позволяет легко создавать интерактивные вкладки и переключатели на вашей веб-странице без зависимости от сторонних библиотек.
 
@@ -39,15 +39,15 @@
 Если вы используете пакетный менеджер npm, вы можете установить плагин с помощью следующей команды:
 
 ```bash
-npm install my-tabs-plugin
+npm install skeleton-tabs
 ```
 
 ### Подключение через тег `<script>`
 
-Скачайте файл `my-tabs-plugin.min.js` из папки `dist` или из [релизов GitHub](#) и подключите его в вашем HTML-файле:
+Скачайте файл `skeleton-tabs.min.js` из папки `dist` или из [релизов GitHub](#) и подключите его в вашем HTML-файле:
 
 ```html
-<script src="path/to/my-tabs-plugin.min.js"></script>
+<script src="path/to/skeleton-tabs.min.js"></script>
 ```
 
 ---
@@ -61,7 +61,7 @@ npm install my-tabs-plugin
 Если вы используете сборщик модулей или поддерживаете ES6-модули, вы можете импортировать плагин следующим образом:
 
 ```javascript
-import { RadioTabs, CheckboxTabs } from 'my-tabs-plugin';
+import { RadioTabs, CheckboxTabs } from 'skeleton-tabs';
 ```
 
 #### CommonJS
@@ -69,17 +69,17 @@ import { RadioTabs, CheckboxTabs } from 'my-tabs-plugin';
 Если ваш проект использует CommonJS (например, в Node.js или с использованием `require`), импортируйте плагин так:
 
 ```javascript
-const { RadioTabs, CheckboxTabs } = require('my-tabs-plugin');
+const { RadioTabs, CheckboxTabs } = require('skeleton-tabs');
 ```
 
 #### Через глобальные переменные
 
-Если вы подключили плагин через тег `<script>`, классы доступны через объект `MyTabsPlugin`:
+Если вы подключили плагин через тег `<script>`, классы доступны через объект `SkeletonTabs`:
 
 ```html
-<script src="path/to/my-tabs-plugin.min.js"></script>
+<script src="path/to/skeleton-tabs.min.js"></script>
 <script>
-  const { RadioTabs, CheckboxTabs } = MyTabsPlugin;
+  const { RadioTabs, CheckboxTabs } = SkeletonTabs;
   // Ваш код здесь
 </script>
 ```
@@ -94,14 +94,14 @@ const { RadioTabs, CheckboxTabs } = require('my-tabs-plugin');
 
 ```html
 <!-- Кнопки -->
-<button data-tabs-button="myRadioTabs" data-value="tab1">Таб 1</button>
-<button data-tabs-button="myRadioTabs" data-value="tab2">Таб 2</button>
-<button data-tabs-button="myRadioTabs" data-value="tab3">Таб 3</button>
+<button data-skeleton-tabs-button="myRadioTabs" data-value="tab1">Таб 1</button>
+<button data-skeleton-tabs-button="myRadioTabs" data-value="tab2">Таб 2</button>
+<button data-skeleton-tabs-button="myRadioTabs" data-value="tab3">Таб 3</button>
 
 <!-- Контент -->
-<div data-tabs-content="myRadioTabs" data-value="tab1">Контент для Таба 1</div>
-<div data-tabs-content="myRadioTabs" data-value="tab2">Контент для Таба 2</div>
-<div data-tabs-content="myRadioTabs" data-value="tab3">Контент для Таба 3</div>
+<div data-skeleton-tabs-content="myRadioTabs" data-value="tab1">Контент для Таба 1</div>
+<div data-skeleton-tabs-content="myRadioTabs" data-value="tab2">Контент для Таба 2</div>
+<div data-skeleton-tabs-content="myRadioTabs" data-value="tab3">Контент для Таба 3</div>
 ```
 
 **JavaScript:**
@@ -119,16 +119,16 @@ new RadioTabs({
 
 ```html
 <!-- Кнопки -->
-<button data-tabs-button="interactive" data-value="a">Опция A</button>
-<button data-tabs-button="interactive" data-value="b">Опция B</button>
-<button data-tabs-button="interactive" data-value="c">Опция C</button>
+<button data-skeleton-tabs-button="interactive" data-value="a">Опция A</button>
+<button data-skeleton-tabs-button="interactive" data-value="b">Опция B</button>
+<button data-skeleton-tabs-button="interactive" data-value="c">Опция C</button>
 
 <!-- Контент -->
-<div data-tabs-content="interactive" data-value="a">Контент для A</div>
-<div data-tabs-content="interactive" data-value="b">Контент для B</div>
-<div data-tabs-content="interactive" data-value="c">Контент для C</div>
-<div data-tabs-content="interactive" data-value="ab">Контент для A+B</div>
-<div data-tabs-content="interactive" data-value="abc">Контент для A+B+C</div>
+<div data-skeleton-tabs-content="interactive" data-value="a">Контент для A</div>
+<div data-skeleton-tabs-content="interactive" data-value="b">Контент для B</div>
+<div data-skeleton-tabs-content="interactive" data-value="c">Контент для C</div>
+<div data-skeleton-tabs-content="interactive" data-value="ab">Контент для A+B</div>
+<div data-skeleton-tabs-content="interactive" data-value="abc">Контент для A+B+C</div>
 <!-- Добавьте контент для необходимых комбинаций -->
 ```
 
@@ -160,7 +160,7 @@ new RadioTabs(options: {
 });
 ```
 
-- **options.name**: (строка) Имя группы табов. Должно совпадать с значением в `data-tabs-button` и `data-tabs-content`.
+- **options.name**: (строка) Имя группы табов. Должно совпадать с значением в `data-skeleton-tabs-button` и `data-skeleton-tabs-content`.
 - **options.activeClass**: (строка, необязательный) Класс, который будет добавляться активным элементам. По умолчанию `'active'`.
 
 #### Методы
@@ -174,11 +174,11 @@ new RadioTabs(options: {
 **HTML-разметка:**
 
 ```html
-<button data-tabs-button="profileTabs" data-value="info">Информация</button>
-<button data-tabs-button="profileTabs" data-value="settings">Настройки</button>
+<button data-skeleton-tabs-button="profileTabs" data-value="info">Информация</button>
+<button data-skeleton-tabs-button="profileTabs" data-value="settings">Настройки</button>
 
-<div data-tabs-content="profileTabs" data-value="info">Контент информации</div>
-<div data-tabs-content="profileTabs" data-value="settings">Контент настроек</div>
+<div data-skeleton-tabs-content="profileTabs" data-value="info">Контент информации</div>
+<div data-skeleton-tabs-content="profileTabs" data-value="settings">Контент настроек</div>
 ```
 
 **JavaScript:**
@@ -210,7 +210,7 @@ new CheckboxTabs(options: {
 });
 ```
 
-- **options.name**: (строка) Имя группы переключателей. Должно совпадать с значением в `data-tabs-button` и `data-tabs-content`.
+- **options.name**: (строка) Имя группы переключателей. Должно совпадать с значением в `data-skeleton-tabs-button` и `data-skeleton-tabs-content`.
 - **options.activeClass**: (строка, необязательный) Класс, который будет добавляться активным элементам. По умолчанию `'active'`.
 
 #### Методы
@@ -224,14 +224,14 @@ new CheckboxTabs(options: {
 **HTML-разметка:**
 
 ```html
-<button data-tabs-button="filterOptions" data-value="red">Красный</button>
-<button data-tabs-button="filterOptions" data-value="green">Зеленый</button>
-<button data-tabs-button="filterOptions" data-value="blue">Синий</button>
+<button data-skeleton-tabs-button="filterOptions" data-value="red">Красный</button>
+<button data-skeleton-tabs-button="filterOptions" data-value="green">Зеленый</button>
+<button data-skeleton-tabs-button="filterOptions" data-value="blue">Синий</button>
 
-<div data-tabs-content="filterOptions" data-value="red">Контент красного</div>
-<div data-tabs-content="filterOptions" data-value="green">Контент зеленого</div>
-<div data-tabs-content="filterOptions" data-value="blue">Контент синего</div>
-<div data-tabs-content="filterOptions" data-value="redgreen">Контент красного и зеленого</div>
+<div data-skeleton-tabs-content="filterOptions" data-value="red">Контент красного</div>
+<div data-skeleton-tabs-content="filterOptions" data-value="green">Контент зеленого</div>
+<div data-skeleton-tabs-content="filterOptions" data-value="blue">Контент синего</div>
+<div data-skeleton-tabs-content="filterOptions" data-value="redgreen">Контент красного и зеленого</div>
 <!-- Добавьте контент для необходимых комбинаций -->
 ```
 
@@ -299,11 +299,11 @@ button.active {
   color: #fff;
 }
 
-[data-tabs-content] {
+[data-skeleton-tabs-content] {
   display: none;
 }
 
-[data-tabs-content].active {
+[data-skeleton-tabs-content].active {
   display: block;
 }
 ```
@@ -347,4 +347,4 @@ button.active {
 
 ---
 
-**[Вернуться к началу](#my-tabs-plugin)**
+**[Вернуться к началу](#skeleton-tabs)**

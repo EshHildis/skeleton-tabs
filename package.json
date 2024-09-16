@@ -2,7 +2,7 @@
   "name": "skeleton-tabs",
   "version": "1.0.0",
   "description": "Плагин для управления табами на странице с использованием классов RadioTabs и CheckboxTabs.",
-  "main": "dist/index.min.js",
+  "main": "dist/skeleton-tabs.min.js",
   "module": "src/index.js",
   "types": "types/index.d.ts",
   "scripts": {

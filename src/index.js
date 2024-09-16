@@ -41,8 +41,8 @@ class RadioTabs {
      */
     getElements(name) {
         // Ищем все элементы кнопок и контента по дата-атрибуту с указанным именем группы
-        const buttons = document.querySelectorAll(`[data-tabs-button="${name}"]`);
-        const contents = document.querySelectorAll(`[data-tabs-content="${name}"]`);
+        const buttons = document.querySelectorAll(`[data-skeleton-tabs-button="${name}"]`);
+        const contents = document.querySelectorAll(`[data-skeleton-tabs-content="${name}"]`);
 
         // Проверяем, что найдены элементы кнопок и контента
         if (buttons.length === 0 || contents.length === 0) {
@@ -178,8 +178,8 @@ class CheckboxTabs {
      */
     getElements(name) {
         // Ищем все элементы кнопок и контента по дата-атрибуту с указанным именем группы
-        const buttons = document.querySelectorAll(`[data-tabs-button="${name}"]`);
-        const contents = document.querySelectorAll(`[data-tabs-content="${name}"]`);
+        const buttons = document.querySelectorAll(`[data-skeleton-tabs-button="${name}"]`);
+        const contents = document.querySelectorAll(`[data-skeleton-tabs-content="${name}"]`);
 
         // Проверяем, что найдены элементы кнопок и контента
         if (buttons.length === 0 || contents.length === 0) {

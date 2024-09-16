@@ -4,7 +4,7 @@ module.exports = {
     entry: './src/index.js', // Точка входа
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.min.js',
+        filename: 'skeleton-tabs.min.js',
         library: 'SkeletonTabs', // Имя глобальной переменной
         libraryTarget: 'umd',
         umdNamedDefine: true,
